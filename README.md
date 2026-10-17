@@ -33,7 +33,7 @@ The detector state is in process memory and the service should run one applicati
 
 ## Deploy to Vercel
 
-Vercel uses Python 3.12 as selected by `.python-version`. `uv.toml` configures uv to resolve packages across PyPI and the PyTorch CPU wheel index; both indexes are trusted project dependencies. Configure the Django and cloud-service environment variables in Vercel before deploying.
+Vercel uses Python 3.12 as selected by `.python-version`. `pyproject.toml` pins `torch` and `torchvision` to the PyTorch CPU wheel index and resolves other packages from PyPI. Configure the Django and cloud-service environment variables in Vercel before deploying.
 
 ## Deploy as a container
 
