@@ -31,6 +31,10 @@ Set `DJANGO_DEBUG=false`, `DJANGO_SECRET_KEY` to a generated random value, and `
 
 The detector state is in process memory and the service should run one application worker. The YOLO model and sample camera video are included in this project. Video processing, memory use, and provider pricing depend on the host's CPU/RAM plan.
 
+## Deploy to Vercel
+
+Vercel uses Python 3.12 as selected by `.python-version`. `uv.toml` configures uv to resolve packages across PyPI and the PyTorch CPU wheel index; both indexes are trusted project dependencies. Configure the Django and cloud-service environment variables in Vercel before deploying.
+
 ## Deploy as a container
 
 The included Dockerfile builds a CPU-only Django/YOLO container. The service must provide `PORT`, `DJANGO_SECRET_KEY`, `DJANGO_ALLOWED_HOSTS`, and any required cloud credentials. Do not add `.env` or Firebase keys to the Docker image.
